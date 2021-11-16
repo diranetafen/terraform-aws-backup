@@ -82,7 +82,6 @@ resource "aws_iam_role" "default" {
   count              = local.iam_role_enabled ? 1 : 0
   name               = local.iam_role_name
   assume_role_policy = join("", data.aws_iam_policy_document.assume_role.*.json)
-  tags               = module.label_backup_role.tags
 }
 
 data "aws_iam_role" "existing" {

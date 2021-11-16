@@ -1,3 +1,7 @@
+terraform {
+  experiments = [variable_validation]
+}
+
 variable "kms_key_arn" {
   type        = string
   description = "The server-side encryption key that is used to protect your backups"
